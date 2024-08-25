@@ -1,0 +1,61 @@
+﻿@model sinema00.Models.Film
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Film</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FilmId" />
+            <div class="form-group">
+                <label asp-for="FilmAdi" class="control-label"></label>
+                <input asp-for="FilmAdi" class="form-control" />
+                <span asp-validation-for="FilmAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Yonetmen" class="control-label"></label>
+                <input asp-for="Yonetmen" class="form-control" />
+                <span asp-validation-for="Yonetmen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tur" class="control-label"></label>
+                <input asp-for="Tur" class="form-control" />
+                <span asp-validation-for="Tur" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Fotograf" class="control-label"></label>
+                <input type="file" name="ImageFile" class="form-control" accept="image/*" />
+                <span asp-validation-for="Fotograf" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <img src="@Url.Content(Model.Fotograf)" alt="Current Image" width="100" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Aciklama" class="control-label"></label>
+                <input asp-for="Aciklama" class="form-control" />
+                <span asp-validation-for="Aciklama" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

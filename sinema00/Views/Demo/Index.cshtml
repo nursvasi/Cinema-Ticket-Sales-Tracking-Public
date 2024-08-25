@@ -1,0 +1,44 @@
+﻿@model sinema00.Models.Cascade
+
+@{
+    ViewData["Title"] = "Salonlar";
+}
+
+<h2>Choose your movie and session.</h2>
+
+<div class="form-control">
+    @Html.Label("Movie Name")
+    @Html.DropDownList("FilmID", Model.FilmLists, "Choose Movie", new { @class = "form-control", id = "film", onchange = "loadSeanslar()" })
+    <br />
+    @Html.Label("Session Time")
+    @Html.DropDownList("SeansID", Model.SeansLists, "Choose Sessions", new { @class = "form-control", id = "seans" })
+    <br />
+</div>
+
+@section Scripts {
+    <script>
+        function loadSeanslar() {
+            var filmId = document.getElementById("film").value;
+            var seansDropdown = document.getElementById("seans");
+
+            // Seans dropdown'ı temizle
+            seansDropdown.innerHTML = '<option value="">Choose Sessions</option>';
+
+            if (filmId) {
+                // Fetch API kullanarak asenkron veri çekme
+                fetch(`/Demo/GetSeansByFilmId?filmId=${filmId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        data.forEach(seans => {
+                            // Her seans için bir seçenek oluştur
+                            var option = document.createElement("option");
+                            option.value = seans.value; // Value kullanımı küçük harfle
+                            option.text = seans.text; // Text kullanımı küçük harfle
+                            seansDropdown.appendChild(option);
+                        });
+                    })
+                    .catch(error => console.error('Error fetching seans:', error));
+            }
+        }
+    </script>
+}

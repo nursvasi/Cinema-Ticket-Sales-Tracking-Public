@@ -1,0 +1,47 @@
+﻿@model sinema00.Models.Odeme
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Odeme</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="OdemeId" class="control-label"></label>
+                <input asp-for="OdemeId" class="form-control" />
+                <span asp-validation-for="OdemeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BiletId" class="control-label"></label>
+                <select asp-for="BiletId" class ="form-control" asp-items="ViewBag.BiletId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="OdemeTuru" class="control-label"></label>
+                <input asp-for="OdemeTuru" class="form-control" />
+                <span asp-validation-for="OdemeTuru" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OdemeTutari" class="control-label"></label>
+                <input asp-for="OdemeTutari" class="form-control" />
+                <span asp-validation-for="OdemeTutari" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sinema00", "sinema00\sinema00.csproj", "{6EFBA535-2BDE-4F11-AE76-BD1B239E3EDD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6EFBA535-2BDE-4F11-AE76-BD1B239E3EDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EFBA535-2BDE-4F11-AE76-BD1B239E3EDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EFBA535-2BDE-4F11-AE76-BD1B239E3EDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EFBA535-2BDE-4F11-AE76-BD1B239E3EDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE8EB9D1-E902-487E-9057-D1B0D54C6221}
+	EndGlobalSection
+EndGlobal

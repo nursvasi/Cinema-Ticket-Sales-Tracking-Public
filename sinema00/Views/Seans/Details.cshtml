@@ -1,0 +1,37 @@
+﻿@model sinema00.Models.Sean
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Sean</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Session Time
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SeansSaati)
+        </dd>
+        <dt class = "col-sm-2">
+            Movie       
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Film.FilmAdi)
+        </dd>
+        <dt class = "col-sm-2">
+            Salon
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Salon.SalonAdi)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.SeansId" class="btn btn-danger">Edit</a> |
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+
+</div>

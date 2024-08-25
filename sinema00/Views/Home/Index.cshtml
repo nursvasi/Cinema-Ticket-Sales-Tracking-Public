@@ -1,0 +1,61 @@
+﻿@model IEnumerable<sinema00.Models.Film>
+
+@{
+    ViewData["Title"] = "Film Listesi";
+}
+
+<style>
+    .equal-size-img {
+        width: 100%; /* Sütunun genişliği kadar olmasını sağlar */
+        height: auto; /* Oranını koruyarak yüksekliğini ayarlar */
+    }
+
+    .fixed-size-container {
+        width: 100%; /* Sütunun genişliği kadar olmasını sağlar */
+        height: 600px; /* Sabit yükseklik */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .fixed-size {
+        max-width: 100%; /* Resimlerin kapsayıcı içine sığmasını sağlar */
+        max-height: 100%; /* Resimlerin kapsayıcı içine sığmasını sağlar */
+    }
+
+    .no-padding {
+        padding: 0; /* Sütunlar arasındaki padding'i kaldırır */
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="text-center">
+                <h4 class="display-4">Cinema Ticket Sales Tracking</h4>
+                <p>Cinema Magic, Where Imagination Knows No Bounds.</a>.</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row no-gutters">
+        <div class="col-md-4 text-center no-padding">
+            <div class="fixed-size-container">
+                <img src="~/lib/pfilm459-harry-potter-and-the-deathly-hallows-part-i_c3ca0810-movie-film-poster-1000x1000.webp" class="fixed-size equal-size-img" alt="hp Image">
+            </div>
+        </div>
+        <div class="col-md-4 text-center no-padding">
+            <div class="fixed-size-container">
+                <img src="~/lib/lord_of_the_rings_the_two_towers_2002_original_film_art_5dd21feb-10ab-41a1-84a1-4c4b082e9626_5000x.webp" class="fixed-size equal-size-img" alt="ye Image">
+            </div>
+        </div>
+        <div class="col-md-4 text-center no-padding">
+            <div class="fixed-size-container">
+                <img src="~/lib/20161229175630!Karayip_Korsanları_Gizemli_Denizlerde.jpg" class="fixed-size equal-size-img" alt="ke Image">
+            </div>
+        </div>
+    </div>
+</div>
+

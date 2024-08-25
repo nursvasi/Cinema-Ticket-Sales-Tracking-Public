@@ -1,0 +1,36 @@
+﻿@model sinema00.Models.Bilet
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Bilet</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Fiyat)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Musteri)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Musteri.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Seans)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Seans.SeansSaati)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.BiletId" class="btn btn-danger">Edit</a> |
+    <a asp-action="Index" class="btn btn-danger">Back to List</a>
+</div>

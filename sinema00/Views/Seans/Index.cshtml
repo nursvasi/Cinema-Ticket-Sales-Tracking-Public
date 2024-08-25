@@ -1,0 +1,62 @@
+﻿@model IEnumerable<sinema00.Models.Sean>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Sessions</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table table-bordered table-striped" id="tbllist">
+
+    <thead class="bg-dark text-white">
+        <tr>
+            <th>
+                Session Time
+            </th>
+            <th>
+                Movie
+            </th>
+            <th>
+                Salon
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeansSaati)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Film.FilmAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salon.SalonAdi)
+            </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.SeansId" class="btn btn-primary">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.SeansId" class="btn btn-warning">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.SeansId" class="btn btn-danger">Delete</a>
+                </td>
+
+        </tr>
+}
+    </tbody>
+</table>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+<script type="text/javascript">
+    var js = jQuery.noConflict(true);
+    js(document).ready(function () {
+        js('#tbllist').DataTable({
+
+        });
+    });
+</script>
