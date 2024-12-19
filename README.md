@@ -1,1 +1,2 @@
-# sinema00
+# Cinema Ticket Sales Tracking
+This project is a Cinema Ticket Sales Tracking system designed to streamline cinema ticket sales and management processes. Developed using the ASP.NET Core MVC framework, it features a user-friendly interface and utilizes SQL Server for data management. The system offers essential functionalities such as movie, customer, hall, and session management to optimize cinema operations. It also supports ticket sales, payment transactions, and revenue reporting. Database operations are handled using Entity Framework Core, while a modern web interface is implemented with Razor Pages. This project aims to digitize manual processes for cinema businesses, providing a fast and efficient solution.
